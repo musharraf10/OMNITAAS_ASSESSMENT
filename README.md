@@ -1,51 +1,42 @@
-Here is a **clean, professional README** you can put in your GitHub repo. It is simple but looks good for a technical assignment.
-
-You can create a file named **`README.md`** in the root of your project and paste this.
-
----
-
 # React + Node.js Login Application
 
-## Project Overview
+## Description
 
-This project is a simple full-stack **Login Application** built using **React (Vite) for the frontend** and **Node.js with Express for the backend**.
+This project was built as part of a **Full-Stack Developer Technical Test**.
+It is a simple login application using **React (frontend)** and **Node.js with Express (backend)**.
 
-The application allows users to enter their username and password, validates the credentials through a backend API, and redirects the user to a Welcome page upon successful login.
+The application validates user credentials through an API and redirects the user to a Welcome page after successful login.
 
 ---
 
-# Tech Stack
+## Technologies Used
 
-### Frontend
+**Frontend**
 
 - React (Vite)
 - React Hooks
 - Axios
 - React Router
 
-### Backend
+**Backend**
 
 - Node.js
 - Express.js
 - CORS
-- REST API
 
 ---
 
-# Features
+## Features
 
 - Login page with username and password
-- Backend API for credential validation
-- Navigation to Welcome page after successful login
-- Error message for incorrect credentials
-- Username remembered using LocalStorage
-- Proper HTTP status codes
+- Backend API for login validation
+- Redirect to Welcome page on successful login
+- Error message for invalid credentials
+- Username remembered using localStorage
 
 ---
 
-# Login Credentials
-
-Use the following credentials to test the application:
+## Test Credentials
 
 ```
 Username: admin
@@ -54,77 +45,9 @@ Password: admin
 
 ---
 
-# Project Structure
+## Running the Project
 
-```
-login-app
-│
-├── backend
-│   └── server.js
-│
-└── frontend
-    ├── src
-    │   ├── components
-    │   │   ├── Login.jsx
-    │   │   └── Welcome.jsx
-    │   ├── App.jsx
-    │   └── main.jsx
-```
-
----
-
-# API Endpoint
-
-### Login
-
-```
-POST /login
-```
-
-Example Request:
-
-```
-{
-  "username": "admin",
-  "password": "admin"
-}
-```
-
-### Response
-
-Success
-
-```
-Status: 200
-{
-  "message": "Login successful"
-}
-```
-
-Invalid Credentials
-
-```
-Status: 401
-{
-  "message": "Invalid credentials"
-}
-```
-
----
-
-# Running the Project Locally
-
-## Clone Repository
-
-```
-git clone https://github.com/yourusername/login-app.git
-```
-
----
-
-## Run Backend
-
-Navigate to backend folder:
+### Start Backend
 
 ```
 cd backend
@@ -140,9 +63,7 @@ http://localhost:8000
 
 ---
 
-## Run Frontend
-
-Navigate to frontend folder:
+### Start Frontend
 
 ```
 cd frontend
@@ -158,28 +79,23 @@ http://localhost:5173
 
 ---
 
-# Demo Video
-
-Screen recording explaining the project:
+## API Endpoint
 
 ```
-Add your video link here
+POST /login
 ```
+
+Response:
+
+- **200** → Login successful
+- **401** → Invalid credentials
 
 ---
 
-# Author
+## Submission
 
-**Musharaf Shaik**
+**GitHub Repository:**
+[(Github Link)](https://github.com/musharraf10/OMNITAAS_ASSESSMENT)
 
----
-
-## Tip for Submission
-
-Before pushing:
-
-```
-git add .
-git commit -m "Completed React Node Login Application"
-git push
-```
+**Screen Recording:**
+(Add video link)
