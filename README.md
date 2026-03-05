@@ -45,36 +45,10 @@ Password: admin
 
 ---
 
-## Running the Project
-
-### Start Backend
+Live Url:
 
 ```
-cd backend
-npm install
-node server.js
-```
-
-Backend runs on:
-
-```
-http://localhost:8000
-```
-
----
-
-### Start Frontend
-
-```
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend runs on:
-
-```
-http://localhost:5173
+https://omnitaas-assessment.vercel.app/
 ```
 
 ---
