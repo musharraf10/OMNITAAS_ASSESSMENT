@@ -7,6 +7,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +18,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, { username, password });
       if (res.status === 200) {
@@ -25,6 +27,9 @@ function Login() {
       }
     } catch (err) {
       setError(err.response ? err.response.data.message : "Server not running");
+    } finally {
+      // This runs regardless of success or failure
+      setIsLoading(false);
     }
   };
 
@@ -47,7 +52,7 @@ function Login() {
                   <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
                 </svg>
                 <input id="username" type="text" placeholder="Enter your username"
-                  value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" />
+                  value={username} onChange={(e) => setUsername(e.target.value.trim())} autoComplete="username" />
               </div>
             </div>
 
@@ -62,7 +67,7 @@ function Login() {
               </div>
             </div>
 
-            <button className="login-btn" type="submit">Sign In</button>
+            <button className={isLoading ? "btn-loading" : "login-btn"} disabled={isLoading} type="submit">{isLoading ? 'Logging in...' : 'Login'}</button>
           </form>
 
           {error && (
